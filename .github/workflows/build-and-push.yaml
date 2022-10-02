@@ -24,7 +24,7 @@ jobs:
     - name: Publish to Docker Hub
       uses: docker/build-push-action@v2
       with:
-       username: ${{ secrets.DOCKER_HUB_USERNAME }}
-       password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-       repository: nixvarghese03/simple-java-maven-app
-       tags: ${{github.run_number}}
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/simple-java-maven-app:${{github.ref_name }}
