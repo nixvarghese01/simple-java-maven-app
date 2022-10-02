@@ -33,4 +33,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/simple-java-maven-app:${{github.ref_name }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/simple-java-maven-app:${{ github.run_number }}
